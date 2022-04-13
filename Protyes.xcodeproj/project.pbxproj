@@ -32,6 +32,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		354BE827280789070063F41B /* LoginPages */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LoginPages;
+			sourceTree = "<group>";
+		};
 		35E30DC52807866900030195 = {
 			isa = PBXGroup;
 			children = (
@@ -51,6 +58,7 @@
 		35E30DD02807866900030195 /* Protyes */ = {
 			isa = PBXGroup;
 			children = (
+				354BE827280789070063F41B /* LoginPages */,
 				35E30DD12807866900030195 /* ProtyesApp.swift */,
 				35E30DD32807866900030195 /* ContentView.swift */,
 				35E30DD52807866F00030195 /* Assets.xcassets */,
