@@ -30,12 +30,12 @@ struct AdminContentView: View {
                     Image(systemName: "plus")
                     Text("Protest")
                 }
-         /*  AdminPage(liveLatitude: 0.0, liveLongitude: 0.0)
+          AdminPage()
                 .tabItem() {
                     Image(systemName: "a.circle.fill")
                     Text("Admin")
                 }
-            */
+            
             ProtestInfo()
                 .tabItem() {
                     Image(systemName: "info.circle.fill")
