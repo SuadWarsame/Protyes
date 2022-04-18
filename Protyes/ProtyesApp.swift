@@ -11,7 +11,7 @@ import SwiftUI
 struct ProtyesApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            AdminContentView()
         }
     }
 }
