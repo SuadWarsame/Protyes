@@ -14,7 +14,6 @@ import FirebaseFirestore
 
 struct LoginView: View {
     
-    //behavioral design pattern that allows an object to change the behavior when its internal state changes, so when the value changes, SwiftUI updates the parts of the view
     @State var isLoginMode = false
     @State var email = ""
     @State var password = ""
@@ -22,7 +21,7 @@ struct LoginView: View {
     @State var showHomeScreen: Bool = false
     @State var showAdminScreen: Bool = false
     
-    
+    //behavioral design pattern that allows an object to change the behavior when its internal state changes, so when the value changes, SwiftUI updates the parts of the view
    
     
     
@@ -97,9 +96,10 @@ struct LoginView: View {
                     .fullScreenCover(isPresented: $showHomeScreen, content: {
                                 UserContentView()
                           })
-                
-                        
-                
+                    .fullScreenCover(isPresented: $showAdminScreen, content: {
+                                AdminContentView()
+                          })
+                   
                     
                     Text(self.errorMessage)
                         .foregroundColor(.red)
@@ -121,6 +121,7 @@ struct LoginView: View {
     
     @State var image: UIImage?
     
+    // Changes depending on if user is in login mode or sign up mode
     private func handleAction() {
         
         if isLoginMode{
@@ -139,7 +140,7 @@ struct LoginView: View {
     }
     
     @State var errorMessage = ""
-        
+        // Function used to create the account by using firebase Auth
         private func createNewAccount() {
             FirebaseManager.shared.auth.createUser(withEmail: email, password: password) { result, err in
                 if let err = err{
@@ -155,7 +156,7 @@ struct LoginView: View {
                 
         }
     }
-    
+    // Function used to store user image URL and information to firestore
     private func storeUserInformation(imageProfileUrl: URL) {
         guard let uid = FirebaseManager.shared.auth.currentUser?.uid else { return }
         let userData = ["email": self.email, "uid": uid, "profileImageUrl": imageProfileUrl.absoluteString]
@@ -170,6 +171,8 @@ struct LoginView: View {
                 print("Success")
             }
     }
+    
+    //Save image to Fire Storage
     
     private func persistImageToStorage() {
     //    let filename = UUID().uuidString
@@ -198,10 +201,8 @@ struct LoginView: View {
         }
         
     }
-    func handleSignOut(){
-        
-    }
     
+    // Auth user by sending the inputed information to firebase auth
     private func loginUser() {
         
         

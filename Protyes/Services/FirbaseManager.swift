@@ -8,6 +8,8 @@
 import Foundation
 import Firebase
 
+//Firebase manager will be used to manage firestore firebase strogage and firebase authetication
+
 class FirebaseManager: NSObject {
     let auth: Auth
     let storage: Storage

@@ -26,6 +26,7 @@
 		3594412C28161A1000CFD62C /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3594412B28161A1000CFD62C /* ImagePicker.swift */; };
 		3594412E28161BE900CFD62C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3594412D28161BE900CFD62C /* GoogleService-Info.plist */; };
 		35944130281B3A0800CFD62C /* DatabseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3594412F281B3A0800CFD62C /* DatabseModel.swift */; };
+		35944132283346DD00CFD62C /* HexColourExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35944131283346DD00CFD62C /* HexColourExtension.swift */; };
 		35E30DD22807866900030195 /* ProtyesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E30DD12807866900030195 /* ProtyesApp.swift */; };
 		35E30DD62807866F00030195 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35E30DD52807866F00030195 /* Assets.xcassets */; };
 		35E30DD92807866F00030195 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35E30DD82807866F00030195 /* Preview Assets.xcassets */; };
@@ -47,6 +48,7 @@
 		3594412B28161A1000CFD62C /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		3594412D28161BE900CFD62C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3594412F281B3A0800CFD62C /* DatabseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabseModel.swift; sourceTree = "<group>"; };
+		35944131283346DD00CFD62C /* HexColourExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexColourExtension.swift; sourceTree = "<group>"; };
 		35E30DCE2807866900030195 /* Protyes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Protyes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35E30DD12807866900030195 /* ProtyesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtyesApp.swift; sourceTree = "<group>"; };
 		35E30DD52807866F00030195 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				3594411F2816148C00CFD62C /* FirbaseManager.swift */,
 				3594412B28161A1000CFD62C /* ImagePicker.swift */,
 				3594412F281B3A0800CFD62C /* DatabseModel.swift */,
+				35944131283346DD00CFD62C /* HexColourExtension.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 				354BE832280E1CD80063F41B /* AdminContentView.swift in Sources */,
 				354BE82D28078B950063F41B /* AdminLogin.swift in Sources */,
 				354BE82B28078B520063F41B /* LoginView.swift in Sources */,
+				35944132283346DD00CFD62C /* HexColourExtension.swift in Sources */,
 				354BE836280E1D5D0063F41B /* HomePageView.swift in Sources */,
 				35944130281B3A0800CFD62C /* DatabseModel.swift in Sources */,
 				354BE82928078A490063F41B /* IntroView.swift in Sources */,

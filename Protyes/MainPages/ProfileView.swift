@@ -8,49 +8,9 @@
 import SwiftUI
 import FirebaseFirestore
 import MapKit
-
-struct MainUser {
-    let uid, email, profileImageUrl: String
-}
+import SDWebImageSwiftUI
 
 
-class UserInfoModel: ObservableObject{
-    
-    
-    @Published var email = ""
-    @Published var errorMessage = ""
-    
-    init() {
-        fetchCurrentUser()
-    }
-    private func fetchCurrentUser() {
-        guard let uid = FirebaseManager.shared.auth.currentUser?.uid else{
-            self.errorMessage = "No UID found"
-            return
-        }
-        
-        FirebaseManager.shared.firestore.collection("users").document(uid).getDocument { snapshot, error in
-            if let error = error{
-                print("failed to fetch current user", error)
-                return
-            }
-            guard let data = snapshot?.data() else{
-                return
-            }
-            
-            
-            let uid = data["uid"] as? String ?? ""
-            let email = data["email"] as? String ?? ""
-            let profileImageUrl = data["profileImageUrl"] as? String ?? ""
-            let chatUser = MainUser(uid: uid, email: email, profileImageUrl: profileImageUrl)
-            
-            
-            self.email = chatUser.email
-        }
-        
-        
-    }
-}
 
    
 
@@ -61,10 +21,6 @@ struct Live: Identifiable {
  var liveLongitude : Double
 }
     
-//struct Cities: Codable, Identifiable {
-//  var id: String?
- // var cities: [City]
-//}
 
 
 
@@ -90,11 +46,16 @@ struct ProfileView: View {
         NavigationView{
             ZStack{
                 
+                //image
+             
+                
                 Circle()
                     .scale(1.7)
                     .foregroundColor(.white)
                 
                 VStack{
+                    
+
                     Text("Profile")
                         .font(.largeTitle)
                         .bold()
@@ -102,6 +63,12 @@ struct ProfileView: View {
                         .foregroundColor(.blue)
                     Spacer()
                         .frame(height: 50)
+                    WebImage(url: URL(string: vm.profileImage))
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 200, height: 200)
+                        .clipped()
+                        .cornerRadius(44)
                     Text(vm.email)
                         .font(.largeTitle)
                         .bold()
@@ -144,7 +111,7 @@ struct ProfileView: View {
         }
         .navigationBarHidden(false)
     }
-    
+    //Sign out function
     private func signOut() {
         
        try? FirebaseManager.shared.auth.signOut()

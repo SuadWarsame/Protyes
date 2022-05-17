@@ -73,6 +73,7 @@ struct AdminLogin: View {
         .navigationBarHidden(false)
     }
     
+    // Directs admin to admin page if the correct password is inputted
     private func handleAction() {
         loginUser()
         
@@ -84,6 +85,7 @@ struct AdminLogin: View {
             }
     }
     
+    // User information is sent to firebase Auth to get verfied
     private func loginUser() {
         FirebaseManager.shared.auth.signIn(withEmail: email, password: password) { result, err in
             if let err = err{

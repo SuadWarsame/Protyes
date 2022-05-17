@@ -7,11 +7,10 @@
 
 import SwiftUI
 
-// used to store variables of different type of data
 struct IntroView: View {
     
   
-    
+    //Welcome screen
     
     var body: some View {
         NavigationView{
@@ -35,7 +34,7 @@ struct IntroView: View {
                     
                     
                     
-                   // controls a navigation presentation
+                   
                     NavigationLink(destination: LoginView()) {
                         Text("GET STARTED")
                             .foregroundColor(.white)

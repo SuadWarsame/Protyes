@@ -11,7 +11,8 @@ import SwiftUI
 struct ProtyesApp: App {
     var body: some Scene {
         WindowGroup {
-            IntroView()
+           IntroView()
         }
     }
 }
+

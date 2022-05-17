@@ -45,6 +45,7 @@ struct UserContentView: View {
            
     }
 }
+
 struct UserContentView_Previews: PreviewProvider {
     static var previews: some View {
         UserContentView()
